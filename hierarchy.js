@@ -266,7 +266,10 @@ var hierarchy =
         [ "P4::ResolveReferences", "class_p4_1_1_resolve_references.html", null ],
         [ "P4::SubstituteParameters", "class_p4_1_1_substitute_parameters.html", null ],
         [ "P4::ToP4", "class_p4_1_1_to_p4.html", null ],
-        [ "P4::TypeInference", "class_p4_1_1_type_inference.html", null ],
+        [ "P4::TypeInferenceBase", "class_p4_1_1_type_inference_base.html", [
+          [ "P4::ReadOnlyTypeInference", "class_p4_1_1_read_only_type_inference.html", null ],
+          [ "P4::TypeInference", "class_p4_1_1_type_inference.html", null ]
+        ] ],
         [ "P4::UnrollLoops", "class_p4_1_1_unroll_loops.html", null ]
       ] ]
     ] ],
@@ -329,6 +332,9 @@ var hierarchy =
     [ "P4::ErrorReporter", "class_p4_1_1_error_reporter.html", null ],
     [ "P4::ErrorType", "class_p4_1_1_error_type.html", null ],
     [ "P4::ExternInstance", "struct_p4_1_1_extern_instance.html", null ],
+    [ "P4::flat_map< K, V, Compare, Container >", "struct_p4_1_1flat__map.html", null ],
+    [ "P4::flat_map< K, V, Compare, Container >::value_compare", "struct_p4_1_1flat__map_1_1value__compare.html", null ],
+    [ "P4::flat_map< P4::cstring, const P4::StorageLocation *, std::less<>, absl::InlinedVector< std::pair< P4::cstring, const P4::StorageLocation * >, 4 > >", "struct_p4_1_1flat__map.html", null ],
     [ "P4::FrontEnd", "class_p4_1_1_front_end.html", null ],
     [ "P4::FunctionSpecialization", "struct_p4_1_1_function_specialization.html", null ],
     [ "P4::FunctionSpecializationMap", "struct_p4_1_1_function_specialization_map.html", null ],
@@ -349,8 +355,7 @@ var hierarchy =
       [ "P4::hvec_map< const P4::IR::Node *, P4::hvec_set >", "class_p4_1_1hvec__map.html", null ],
       [ "P4::hvec_map< P4::loc_t, const P4::LocationSet * >", "class_p4_1_1hvec__map.html", null ],
       [ "P4::hvec_map< const P4::BaseLocation *, const P4::ProgramPoints * >", "class_p4_1_1hvec__map.html", null ],
-      [ "P4::hvec_map< const P4::IR::IDeclaration *, P4::StorageLocation * >", "class_p4_1_1hvec__map.html", null ],
-      [ "P4::hvec_map< P4::cstring, const P4::StorageLocation * >", "class_p4_1_1hvec__map.html", null ],
+      [ "P4::hvec_map< const P4::IR::IDeclaration *, const P4::StorageLocation * >", "class_p4_1_1hvec__map.html", null ],
       [ "P4::hvec_set< const loc_t * >", "class_p4_1_1hvec__set.html", null ],
       [ "P4::hvec_map< KEY, VAL, HASH, PRED, ALLOC >", "class_p4_1_1hvec__map.html", null ],
       [ "P4::hvec_set< KEY, HASH, PRED, ALLOC >", "class_p4_1_1hvec__set.html", null ]
@@ -667,7 +672,7 @@ var hierarchy =
     [ "P4::ordered_set< T, COMP, ALLOC >", "class_p4_1_1ordered__set.html", null ],
     [ "P4::ordered_set< const IR::FieldList * >", "class_p4_1_1ordered__set.html", null ],
     [ "P4::ordered_set< const IR::Parameter * >", "class_p4_1_1ordered__set.html", null ],
-    [ "P4::ordered_set< const P4::StorageLocation * >", "class_p4_1_1ordered__set.html", null ],
+    [ "P4::ordered_set< const StorageLocation * >", "class_p4_1_1ordered__set.html", null ],
     [ "P4::ordered_set< P4::BMV2::CFG::Edge * >", "class_p4_1_1ordered__set.html", null ],
     [ "P4::ordered_set< P4::BMV2::CFG::Node * >", "class_p4_1_1ordered__set.html", null ],
     [ "P4::ordered_set< P4::cstring >", "class_p4_1_1ordered__set.html", null ],
@@ -1136,7 +1141,7 @@ var hierarchy =
     [ "P4::TC::KeyFieldAttributes", "struct_p4_1_1_t_c_1_1_key_field_attributes.html", null ],
     [ "P4::TC::MidEnd", "class_p4_1_1_t_c_1_1_mid_end.html", null ],
     [ "P4::TC::TableAttributes", "struct_p4_1_1_t_c_1_1_table_attributes.html", null ],
-    [ "P4::TypeInference::Comparison", "class_p4_1_1_type_inference.html#struct_p4_1_1_type_inference_1_1_comparison", null ],
+    [ "P4::TypeInferenceBase::Comparison", "class_p4_1_1_type_inference_base.html#struct_p4_1_1_type_inference_base_1_1_comparison", null ],
     [ "P4::TypeUnification", "class_p4_1_1_type_unification.html", null ],
     [ "P4::UnparsedConstant", "namespace_p4.html#struct_p4_1_1_unparsed_constant", null ],
     [ "P4::UnrollLoops::loop_bounds_t", "class_p4_1_1_unroll_loops.html#struct_p4_1_1_unroll_loops_1_1loop__bounds__t", null ],
@@ -1567,6 +1572,7 @@ var hierarchy =
           [ "P4::BMV2::ParsePnaArchitecture", "class_p4_1_1_b_m_v2_1_1_parse_pna_architecture.html", null ],
           [ "P4::ParsePsaArchitecture", "class_p4_1_1_parse_psa_architecture.html", null ]
         ] ],
+        [ "P4::ReadOnlyTypeInference", "class_p4_1_1_read_only_type_inference.html", null ],
         [ "P4::ReadsWrites", "class_p4_1_1_reads_writes.html", null ],
         [ "P4::RemoveModifiedValues", "class_p4_1_1_remove_modified_values.html", null ],
         [ "P4::ResolveReferences", "class_p4_1_1_resolve_references.html", null ],
@@ -1814,6 +1820,7 @@ var hierarchy =
         [ "P4::UnnestSelectList", "class_p4_1_1_unnest_select_list.html", null ],
         [ "P4::UnrollLoops", "class_p4_1_1_unroll_loops.html", null ]
       ] ],
+      [ "P4::TypeInferenceBase", "class_p4_1_1_type_inference_base.html", null ],
       [ "P4::VisitFunctor", "class_p4_1_1_visit_functor.html", null ]
     ] ],
     [ "P4::Visitor::ChangeTracker", "class_p4_1_1_visitor_1_1_change_tracker.html", null ],
