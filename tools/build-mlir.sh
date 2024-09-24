@@ -28,7 +28,6 @@ cmake -G Ninja ../llvm \
    -DLLVM_CCACHE_BUILD=ON \
    -DLLVM_INSTALL_UTILS=ON
 
-# cmake --build . --target check-mlir
 ninja
 ninja check-mlir
 ninja install

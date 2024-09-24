@@ -1,32 +1,27 @@
-# An out-of-tree MLIR dialect
+# P4MLIR
 
-This is an example of an out-of-tree [MLIR](https://mlir.llvm.org/) dialect along with a standalone `opt`-like tool to operate on that dialect.
+P4MLIR is an experimental [P4C](https://github.com/p4lang/p4c) subproject aiming to bridge the P4C ecosystem and the [MLIR](https://mlir.llvm.org/) ecosystem.
 
-## Building - Component Build
+## Development environment setup
 
-This setup assumes that you have built LLVM and MLIR in `$BUILD_DIR` and installed them to `$PREFIX`. To build and launch the tests, run
-```sh
-mkdir build && cd build
-cmake -G Ninja .. -DMLIR_DIR=$PREFIX/lib/cmake/mlir -DLLVM_EXTERNAL_LIT=$BUILD_DIR/bin/llvm-lit
-cmake --build . --target check-standalone
+1. Install LLVM/MLIR dependencies according to the [instructions](https://mlir.llvm.org/getting_started/).
+
+2. Check out P4C repo:
+
 ```
-To build the documentation from the TableGen description of the dialect operations, run
-```sh
-cmake --build . --target mlir-doc
+$ git clone --recursive git@github.com:p4lang/p4c.git
 ```
-**Note**: Make sure to pass `-DLLVM_INSTALL_UTILS=ON` when building LLVM with CMake in order to install `FileCheck` to the chosen installation prefix.
 
-## Building - Monolithic Build
+3. Build MLIR:
 
-This setup assumes that you build the project as part of a monolithic LLVM build via the `LLVM_EXTERNAL_PROJECTS` mechanism.
-To build LLVM, MLIR, the example and launch the tests run
-```sh
-mkdir build && cd build
-cmake -G Ninja `$LLVM_SRC_DIR/llvm` \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DLLVM_TARGETS_TO_BUILD=host \
-    -DLLVM_ENABLE_PROJECTS=mlir \
-    -DLLVM_EXTERNAL_PROJECTS=standalone-dialect -DLLVM_EXTERNAL_STANDALONE_DIALECT_SOURCE_DIR=../
-cmake --build . --target check-standalone
 ```
-Here, `$LLVM_SRC_DIR` needs to point to the root of the monorepo.
+$ cd p4c
+$ ./tools/build-mlir.sh
+```
+
+4. Build P4MLIR:
+
+```
+$ cd p4c
+$ ./tools/build-p4mlir.sh
+```
