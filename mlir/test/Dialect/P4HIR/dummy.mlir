@@ -9,8 +9,8 @@ module {
         return
     }
 
-    // CHECK-LABEL: func @p4hir_types(%arg0: !p4hir.custom<"10">)
-    func.func @p4hir_types(%arg0: !p4hir.custom<"10">) {
+    // CHECK-LABEL: func @p4hir_bit_type(%arg0: !p4hir.bit<32>)
+    func.func @p4hir_bit_type(%arg0: !p4hir.bit<32>) {
         return
     }
 }

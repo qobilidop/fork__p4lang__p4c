@@ -14,11 +14,15 @@ class P4HIR_Type<string name, string typeMnemonic, list<Trait> traits = []>
   let mnemonic = typeMnemonic;
 }
 
-def P4HIR_CustomType : P4HIR_Type<"Custom", "custom"> {
-    let summary = "P4HIR custom type";
-    let description = "Custom type in p4hir dialect";
-    let parameters = (ins StringRefParameter<"the custom value">:$value);
-    let assemblyFormat = "`<` $value `>`";
+def P4HIR_Bit : P4HIR_Type<"Bit", "bit"> {
+  let summary = "fixed width unsigned integer type";
+  let description = [{
+    The `p4hir.bit` type represents a P4 `bit` type.
+
+    For example, `p4hir.bit<32>` represents `bit<32>` in P4.
+  }];
+  let parameters = (ins "int":$width);
+  let assemblyFormat = "`<` $width `>`";
 }
 
 #endif // P4MLIR_DIALECT_P4HIR_P4HIR_TYPES_TD
