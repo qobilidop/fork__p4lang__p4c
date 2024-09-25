@@ -7,8 +7,8 @@ set(LIBS
 
   P4MLIR_P4HIR
 
-  MLIRArithDialect
   MLIRFuncDialect
+  MLIRSCFDialect
   MLIROptLib
 )
 

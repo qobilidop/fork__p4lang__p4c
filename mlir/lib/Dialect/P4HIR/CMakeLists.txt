@@ -1,5 +1,6 @@
 add_mlir_dialect_library(P4MLIR_P4HIR
   P4HIR_Dialect.cpp
+  P4HIR_Enums.cpp
   P4HIR_Ops.cpp
   P4HIR_Types.cpp
 

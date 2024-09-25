@@ -11,8 +11,8 @@ int main(int argc, char **argv) {
 
   mlir::DialectRegistry registry;
   registry.insert<P4::P4MLIR::P4HIR::P4HIRDialect,
-                  mlir::arith::ArithDialect,
-                  mlir::func::FuncDialect>();
+                  mlir::func::FuncDialect,
+                  mlir::scf::SCFDialect>();
 
   return mlir::asMainReturnCode(
       mlir::MlirOptMain(argc, argv, "P4HIR optimizer driver\n", registry));

@@ -25,4 +25,12 @@ def P4HIR_Bit : P4HIR_Type<"Bit", "bit"> {
   let assemblyFormat = "`<` $width `>`";
 }
 
+//===----------------------------------------------------------------------===//
+// P4HIR type constraints.
+//===----------------------------------------------------------------------===//
+
+def P4HIR_ComparableType : AnyTypeOf<[P4HIR_Bit]> {
+  let cppFunctionName = "IsComparableType";
+}
+
 #endif // P4MLIR_DIALECT_P4HIR_P4HIR_TYPES_TD

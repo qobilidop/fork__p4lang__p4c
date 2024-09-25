@@ -6,6 +6,7 @@ include "mlir/Interfaces/InferTypeOpInterface.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 
 include "p4mlir/Dialect/P4HIR/P4HIR_Dialect.td"
+include "p4mlir/Dialect/P4HIR/P4HIR_Enums.td"
 include "p4mlir/Dialect/P4HIR/P4HIR_Types.td"
 
 //===----------------------------------------------------------------------===//
@@ -19,30 +20,25 @@ class P4HIR_Op<string mnemonic, list<Trait> traits = []> :
 // P4HIR operation definitions.
 //===----------------------------------------------------------------------===//
 
-def P4HIR_FooOp : P4HIR_Op<"foo", [Pure, SameOperandsAndResultType]> {
-    let summary = "Illustrates how to define an operation.";
+def P4HIR_CmpOp : P4HIR_Op<"cmp", [Pure, SameTypeOperands]> {
+    let summary = "comparison operation";
     let description = [{
-        The `p4hir.foo` operation illustrates how to define a new
-        operation in a dialect. It uses an operation trait to declare that it
-        has no side effects.
-
-        This operation takes an integer argument and returns an integer.
+        The `p4hir.cmp` operation is a generic comparison for any P4HIR
+        comparable types.
 
         Example:
 
         ```mlir
-        %0 = arith.constant 2 : i32
-        // Apply the foo operation to %0
-        %1 = p4hir.foo %0 : i32
+        %r = p4hir.cmp equ, %a, %b : p4hir.bit<32>
         ```
     }];
 
-    let arguments = (ins I32:$input);
-    let results = (outs I32:$res);
+    let arguments = (ins
+        P4HIR_CmpPredicate:$predicate,
+        P4HIR_ComparableType:$lhs, P4HIR_ComparableType:$rhs);
+    let results = (outs I1:$result);
 
-    let assemblyFormat = [{
-        $input attr-dict `:` type($input)
-    }];
-}
+    let assemblyFormat = "$predicate `,` $lhs `,` $rhs attr-dict `:` type($lhs)";
+} 
 
 #endif // P4MLIR_DIALECT_P4HIR_P4HIR_OPS_TD

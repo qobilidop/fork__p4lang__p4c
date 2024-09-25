@@ -1,5 +1,6 @@
 #include "p4mlir/Dialect/P4HIR/P4HIR_Dialect.h"
 
+#include "p4mlir/Dialect/P4HIR/P4HIR_Enums.h"
 #include "p4mlir/Dialect/P4HIR/P4HIR_Ops.h"
 #include "p4mlir/Dialect/P4HIR/P4HIR_Types.h"
 
