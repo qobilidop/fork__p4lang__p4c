@@ -1,5 +1,11 @@
 var NAVTREEINDEX33 =
 {
+"struct_b_f_n_1_1_collect_bridged_fields.html":[13,0,2,66],
+"struct_b_f_n_1_1_collect_variables.html":[12,0,2,68],
+"struct_b_f_n_1_1_collect_variables.html":[13,0,2,72],
+"struct_b_f_n_1_1_debug_info.html":[12,0,2,77],
+"struct_b_f_n_1_1_debug_info.html":[13,0,2,81],
+"struct_b_f_n_1_1_debug_info.html#a5013e3451eec5da73eda374e32c688c6":[12,0,2,77,0],
 "struct_b_f_n_1_1_debug_info.html#a5013e3451eec5da73eda374e32c688c6":[13,0,2,81,0],
 "struct_b_f_n_1_1_elim_unused_metadata_states.html":[12,0,2,94],
 "struct_b_f_n_1_1_elim_unused_metadata_states.html":[13,0,2,98],
@@ -243,11 +249,5 @@ var NAVTREEINDEX33 =
 "struct_collect_phv_logging_info.html":[13,0,155],
 "struct_collect_phv_logging_info.html#a06ababd0dfd7c41c13d2f549a6c56b48":[13,0,155,14],
 "struct_collect_phv_logging_info.html#a0faf30e74fbc20d6b2d67afd28cbd7b3":[13,0,155,8],
-"struct_collect_phv_logging_info.html#a14c3f4b618e1740d9fa438004bd44e65":[13,0,155,6],
-"struct_collect_phv_logging_info.html#a20ec1649847fc0f26f776f2aa9420ea3":[13,0,155,0],
-"struct_collect_phv_logging_info.html#a250e7d74e792eb339ba9b3374d8ff4ab":[13,0,155,5],
-"struct_collect_phv_logging_info.html#a25ea972d988bd98e1253649aa89b6663":[13,0,155,10],
-"struct_collect_phv_logging_info.html#a3890aa7b621bfbc0c78d4e1a3e451447":[13,0,155,15],
-"struct_collect_phv_logging_info.html#a509c56b067b707652605e9aca945bb1e":[13,0,155,12],
-"struct_collect_phv_logging_info.html#a69b2b3166612a647676c76c1df35b84c":[13,0,155,13]
+"struct_collect_phv_logging_info.html#a14c3f4b618e1740d9fa438004bd44e65":[13,0,155,6]
 };
